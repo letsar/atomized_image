@@ -1,0 +1,17 @@
+name: atomized_image
+description: A widget which paints and animates images with particles to achieve an atomized effect.
+version: 0.1.0
+homepage: https://github.com/letsar/atomized_image
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  vector_math: ^2.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
