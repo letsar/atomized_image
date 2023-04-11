@@ -26,9 +26,9 @@ class Particle {
   Vector2 acc = Vector2.zero();
   Vector2 target = Vector2.zero();
   bool isKilled = false;
-  Color currentColor = const Color(0x00000000);
+  Color? currentColor = const Color(0x00000000);
   Color endColor = const Color(0x00000000);
-  double currentSize = 0;
+  double? currentSize = 0;
   double distToTarget = 0;
 
   void move(TouchPointer touchPointer) {
@@ -57,7 +57,7 @@ class Particle {
 
     if (touchPointer.offset != null) {
       final touchSize = touchPointer.touchSize;
-      final touch = Vector2(touchPointer.offset.dx, touchPointer.offset.dy);
+      final touch = Vector2(touchPointer.offset!.dx, touchPointer.offset!.dy);
       final distToTouch = pos.distanceTo(touch);
       if (distToTouch < touchSize) {
         final push = pos.clone()..sub(touch);
