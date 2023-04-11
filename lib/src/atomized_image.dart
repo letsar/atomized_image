@@ -108,7 +108,11 @@ class AtomizedImage extends StatelessWidget {
       builder: (_, constraints) {
         return SizedBox.expand(
           child: RawAtomizedImage(
-            provider: image,
+            provider: ResizeImage(
+              image,
+              width: constraints.biggest.width.toInt(),
+              height: constraints.biggest.height.toInt(),
+            ),
             onError: onImageError,
             configuration: createLocalImageConfiguration(context),
             size: constraints.biggest,
@@ -254,6 +258,7 @@ class _RawAtomizedImageState extends State<RawAtomizedImage>
     return TouchDetector(
       touchPointer: touchPointer,
       child: CustomPaint(
+        size: widget.size,
         painter: ParticlesPainter(
           controller,
           particles,
