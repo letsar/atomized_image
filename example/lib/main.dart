@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key key}) : super(key: key);
+  const MyHomePage({Key? key}) : super(key: key);
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -43,9 +43,14 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text('Atomized Image'),
       ),
-      body: AtomizedImage(
-        image: NetworkImage(
-          'https://pbs.twimg.com/profile_images/${_images[_index]}',
+      body: Center(
+        child: SizedBox.fromSize(
+          size: const Size(300, 300),
+          child: AtomizedImage(
+            image: NetworkImage(
+              'https://pbs.twimg.com/profile_images/${_images[_index]}',
+            ),
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
