@@ -245,6 +245,7 @@ class _RawAtomizedImageState extends State<RawAtomizedImage>
         particles[particleIndices[i]].kill(width, height);
       }
     }
+    particles.shuffle();
     setState(() {});
   }
 
